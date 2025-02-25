@@ -1,15 +1,16 @@
 import React from "react";
 import { View  , StyleSheet , Text, TouchableOpacity} from "react-native";
-const Tasks = () =>{
+const Tasks = (props) =>{
   return(
      <View style={styles.taskContainer}>
         <View style={styles.checkBoxContainer}>
            <TouchableOpacity style={styles.checkBox} />
+           <Text style={styles.taskItem}>{props.text}</Text>
         </View>
-        <Text style={styles.taskItem}>Tasks</Text>
-        <View style={styles.checkBoxContainer}>
-           <TouchableOpacity style={styles.RadioBtn} />
-        </View>
+        
+       <TouchableOpacity style={styles.RadioBtn} >
+           
+       </TouchableOpacity>
      </View>
   );
 }
@@ -21,6 +22,8 @@ const styles = StyleSheet.create({
         marginBottom:20,
         margin:20,
         flexDirection:'row',
+        justifyContent:'space-between',
+
     },
     checkBox:{
         width:24,
@@ -32,18 +35,22 @@ const styles = StyleSheet.create({
         backgroundColor:'#55BCF6'
     },
     taskItem:{
-        marginLeft:10,
+        marginLeft:'6%',
         fontSize:20,
+        marginTop:'7%',
+       
+    },
+    checkBoxContainer:{
+      flexDirection:'row'
     },
     RadioBtn:{
-        width:15,
-        height:15,
-        borderRadius:12,
-        borderWidth:2,
-        marginLeft:'80%',
-        marginTop:"2%",
-        borderColor:'#55BCF6',
-        
+       width :20,
+       height:20,
+      borderColor:'#55BCF6',
+       borderRadius:30,
+       marginTop:"2%",
+       borderWidth:2,
+       marginTop:"4%"
     }
 });
 export default Tasks;   
